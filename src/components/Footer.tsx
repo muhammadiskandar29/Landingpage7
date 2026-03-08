@@ -17,10 +17,10 @@ export default function Footer() {
                 <div className="flex flex-col space-y-8">
                     <div className="flex flex-col">
                         <span className="text-3xl font-serif font-bold text-primary tracking-tight">Ria Florist</span>
-                        <span className="text-[10px] uppercase tracking-[0.2em] font-sans -mt-1 opacity-50">Jakarta Premium Service</span>
+                        <span className="text-[10px] uppercase tracking-[0.2em] font-sans -mt-1 opacity-50">Layanan Premium Jakarta</span>
                     </div>
                     <p className="text-slate-400 font-sans leading-relaxed text-sm">
-                        Crafting elegance and professional messages through premium flower boards. Your partner for grand celebrations and respectful tributes across Jakarta.
+                        Menghadirkan keanggunan dan pesan profesional melalui papan bunga premium. Mitra Anda untuk perayaan megah dan penghormatan tulus di seluruh Jakarta.
                     </p>
                     <div className="flex space-x-5 pt-2">
                         <Link href="https://instagram.com/riaflorist.jkt" target="_blank" className="p-3 bg-white/5 rounded-full hover:bg-primary transition-colors text-slate-300 hover:text-white">
@@ -37,9 +37,9 @@ export default function Footer() {
 
                 {/* Quick Links */}
                 <div className="flex flex-col space-y-8">
-                    <h4 className="text-xl font-serif font-bold">Quick Links</h4>
+                    <h4 className="text-xl font-serif font-bold">Tautan Cepat</h4>
                     <ul className="flex flex-col space-y-4">
-                        {['Home', 'Gallery', 'About Us', 'Custom Designer', 'Contact'].map((item) => (
+                        {['Beranda', 'Galeri', 'Tentang Kami', 'Desain Sendiri', 'Kontak'].map((item) => (
                             <li key={item}>
                                 <Link href="#" className="text-slate-400 hover:text-primary transition-colors text-sm font-medium">
                                     {item}
@@ -51,9 +51,9 @@ export default function Footer() {
 
                 {/* Services */}
                 <div className="flex flex-col space-y-8">
-                    <h4 className="text-xl font-serif font-bold">Services</h4>
+                    <h4 className="text-xl font-serif font-bold">Layanan</h4>
                     <ul className="flex flex-col space-y-4">
-                        {['Grand Opening Boards', 'Wedding Flower Boards', 'Sympathy & Condolences', 'Congratulatory Boards', 'Corporate Custom Orders'].map((item) => (
+                        {['Papan Grand Opening', 'Papan Bunga Pernikahan', 'Ucapan Duka Cita', 'Papan Ucapan Selamat', 'Pesanan Kustom Korporat'].map((item) => (
                             <li key={item} className="text-slate-400 text-sm font-medium">
                                 {item}
                             </li>
@@ -63,7 +63,7 @@ export default function Footer() {
 
                 {/* Contact Info */}
                 <div className="flex flex-col space-y-8">
-                    <h4 className="text-xl font-serif font-bold">Local Contact</h4>
+                    <h4 className="text-xl font-serif font-bold">Kontak Lokal</h4>
                     <ul className="flex flex-col space-y-6">
                         <li className="flex items-start space-x-4 group">
                             <MapPin className="text-primary mt-1 w-5 h-5 shrink-0 group-hover:scale-110 transition-transform" />
@@ -87,11 +87,11 @@ export default function Footer() {
 
             <div className="max-w-7xl mx-auto px-6 md:px-12 mt-24 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
                 <p className="text-xs text-slate-500 font-sans uppercase tracking-widest">
-                    © {currentYear} Ria Florist Jakarta. All Rights Reserved.
+                    © {currentYear} Ria Florist Jakarta. Hak Cipta Dilindungi.
                 </p>
                 <div className="flex items-center space-x-10">
-                    <Link href="#" className="text-xs text-slate-500 hover:text-slate-300 uppercase tracking-widest font-sans">Privacy Policy</Link>
-                    <Link href="#" className="text-xs text-slate-500 hover:text-slate-300 uppercase tracking-widest font-sans">Terms & Conditions</Link>
+                    <Link href="#" className="text-xs text-slate-500 hover:text-slate-300 uppercase tracking-widest font-sans">Kebijakan Privasi</Link>
+                    <Link href="#" className="text-xs text-slate-500 hover:text-slate-300 uppercase tracking-widest font-sans">Syarat & Ketentuan</Link>
                 </div>
             </div>
         </footer>

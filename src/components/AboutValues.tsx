@@ -1,88 +1,74 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Ruler, Palette, Zap, CheckCircle } from 'lucide-react'
+import { Ruler, Palette, Zap, Truck } from 'lucide-react'
 
 export default function AboutValues() {
-    const values = [
+    const details = [
         {
-            icon: <Ruler className="text-primary w-8 h-8" />,
-            title: "1.5x2 Meter Standard",
-            description: "Our board dimensions follow the industry standard for a grand and respectful presence."
+            icon: <Zap className="text-primary w-8 h-8" />,
+            title: "Proses Cepat",
+            description: "Produksi efisien dengan standar kualitas tinggi untuk memenuhi kebutuhan mendesak Anda."
         },
         {
             icon: <Palette className="text-primary w-8 h-8" />,
-            title: "Custom Design & Logo",
-            description: "Free customization of colors, fonts, and even complex corporate logo uploads for your branding."
+            title: "Kustomisasi Penuh",
+            description: "Atur warna, tulisan, dan logo sesuka hati melalui desainer interaktif kami."
         },
         {
-            icon: <Zap className="text-primary w-8 h-8" />,
-            title: "Fast Delivery",
-            description: "Enjoy express 4-hour production and same-day delivery across all Jakarta districts."
+            icon: <Truck className="text-primary w-8 h-8" />,
+            title: "Kurir Internal",
+            description: "Pengiriman aman ditangani langsung oleh tim internal kami untuk menjaga kondisi bunga tetap segar."
+        },
+        {
+            icon: <Ruler className="text-primary w-8 h-8" />,
+            title: "Ukuran Standar",
+            description: "Kami hanya menggunakan dimensi terbaik 1,5 x 2 meter untuk kehadiran yang megah."
         }
     ]
 
     return (
-        <section id="about" className="py-24 bg-white relative overflow-hidden">
-            {/* Texture Background */}
-            <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
-
+        <section id="about" className="py-32 bg-white relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-                <div className="flex flex-col items-center text-center space-y-6 max-w-2xl mx-auto mb-20">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
-                        className="inline-block bg-primary/10 px-4 py-2 rounded-full"
+                        className="flex flex-col space-y-8"
                     >
-                        <span className="text-sm font-medium text-primary uppercase tracking-widest font-sans">Why Ria Florist</span>
+                        <div className="inline-block bg-primary/10 px-6 py-2 rounded-full w-fit">
+                            <span className="text-sm font-bold text-primary uppercase tracking-[0.2em] font-sans">Tentang Kami</span>
+                        </div>
+                        <h2 className="text-4xl md:text-5xl font-serif text-slate-900 font-bold leading-tight">
+                            Dedikasi untuk <span className="text-primary italic">Momen Berharga</span> Anda
+                        </h2>
+                        <p className="text-lg text-slate-500 leading-relaxed font-sans max-w-xl">
+                            Ria Florist lahir dari keinginan untuk memberikan layanan papan bunga terbaik di Jakarta. Kami menggabungkan keahlian tradisional dengan teknologi desain modern untuk memastikan pesan Anda tersampaikan dengan elegan dan tepat waktu.
+                        </p>
                     </motion.div>
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.1 }}
-                        viewport={{ once: true }}
-                        className="text-4xl md:text-5xl font-serif text-slate-900"
-                    >
-                        Excellence in Every <span className="text-primary italic">Petal</span>
-                    </motion.h2>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        viewport={{ once: true }}
-                        className="text-slate-500 leading-relaxed font-sans"
-                    >
-                        We take pride in our artisanal approach. Every board is crafted using high-quality
-                        materials and freshly sourced flowers to ensure your message stands out with elegance.
-                    </motion.p>
-                </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-                    {values.map((val, idx) => (
-                        <motion.div
-                            key={idx}
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.6, delay: idx * 0.1 }}
-                            viewport={{ once: true }}
-                            className="bg-[#FAFAFA] p-10 rounded-[2rem] border border-slate-100 hover:border-primary/20 transition-all duration-300 group shadow-sm hover:shadow-xl hover:shadow-primary/5"
-                        >
-                            <div className="mb-6 bg-white w-16 h-16 rounded-2xl flex items-center justify-center shadow-md group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                                <div className="group-hover:text-white transform group-hover:scale-110 transition-transform duration-500">
-                                    {val.icon}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                        {details.map((item, idx) => (
+                            <motion.div
+                                key={idx}
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                                viewport={{ once: true }}
+                                className="bg-[#FAFAFA] p-8 rounded-[2.5rem] border border-slate-100 hover:border-primary/20 transition-all group shadow-sm hover:shadow-xl hover:shadow-primary/5"
+                            >
+                                <div className="mb-6 bg-white w-16 h-16 rounded-2xl flex items-center justify-center shadow-md group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                                    <div className="group-hover:text-white transform group-hover:scale-110 transition-transform duration-500">
+                                        {item.icon}
+                                    </div>
                                 </div>
-                            </div>
-                            <h3 className="text-xl font-bold text-slate-900 mb-4 font-serif">{val.title}</h3>
-                            <p className="text-slate-500 font-sans leading-relaxed">{val.description}</p>
-
-                            <div className="mt-8 flex items-center text-primary font-bold text-sm tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                <span className="mr-2">Premium Quality</span>
-                                <CheckCircle size={16} />
-                            </div>
-                        </motion.div>
-                    ))}
+                                <h3 className="text-lg font-bold text-slate-900 mb-3 font-serif">{item.title}</h3>
+                                <p className="text-slate-500 font-sans text-sm leading-relaxed">{item.description}</p>
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

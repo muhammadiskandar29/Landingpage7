@@ -13,8 +13,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Ria Florist | Premium Flower Board Service",
-  description: "High-quality custom flower boards for all occasions with professional delivery in Jakarta.",
+  title: "Ria Florist | Jasa Papan Bunga Premium Jakarta",
+  description: "Papan bunga elegan dan berkualitas tinggi untuk segala acara dengan pengiriman profesional di Jakarta.",
 };
 
 export default function RootLayout({

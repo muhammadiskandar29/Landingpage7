@@ -1,17 +1,22 @@
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import AboutValues from '@/components/AboutValues'
+import Gallery from '@/components/Gallery'
 import Designer from '@/components/Designer'
 import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
-    <main className="relative bg-[#FAFAFA]">
+    <main className="relative bg-[#FFFFFF]">
       <Navbar />
       <Hero />
-      <AboutValues />
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-12">
-        <div className="h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+        <div className="h-px bg-gradient-to-r from-transparent via-slate-100 to-transparent"></div>
+      </div>
+      <AboutValues />
+      <Gallery />
+      <div className="max-w-7xl mx-auto px-6 md:px-12 py-12">
+        <div className="h-px bg-gradient-to-r from-transparent via-slate-100 to-transparent"></div>
       </div>
       <Designer />
       <Footer />

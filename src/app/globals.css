@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #FAFAFA;
+  --color-background: #FFFFFF;
   --color-foreground: #1A1A1A;
   --color-primary: #2D5A27;
   --color-accent: #E5E7EB;
@@ -11,7 +11,7 @@
 }
 
 :root {
-  --background: #FAFAFA;
+  --background: #FFFFFF;
   --foreground: #1A1A1A;
 }
 
