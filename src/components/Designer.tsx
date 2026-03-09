@@ -56,7 +56,7 @@ export default function Designer() {
     const [previewImage, setPreviewImage] = useState('')
 
     const [state, setState] = useState<DesignState>({
-        id: Math.random().toString(36).substring(7).toUpperCase(),
+        id: "RIA-STUDIO", // Static for hydration
         headerText: "Selamat",
         messageText: "ATAS KELAHIRAN PUTRI KEDUA",
         senderText: "RIZKY BILLAR & LESTI KEJORA",
@@ -72,6 +72,9 @@ export default function Designer() {
     // Initialization
     useEffect(() => {
         if (!canvasRef.current || !containerRef.current) return
+
+        // Set a unique ID only on the client
+        setState(s => ({ ...s, id: Math.random().toString(36).substring(7).toUpperCase() }))
 
         fabric = require('fabric').fabric
 
@@ -177,24 +180,27 @@ export default function Designer() {
         })
         canvas.add(decorFrame)
 
-        // Yellow flower Chain along the path
-        // We can approximate by placing circles on key points or just a loop
-        const numFlowers = 40
-        for (let i = 0; i < numFlowers; i++) {
-            const point = decorFrame.getPointByLength((i / numFlowers) * decorFrame.getPointByLength(0, true)) // Not direct but let's use a simpler way
-            // Simplified: Follow the ellipse/rect approximation for flowers
-        }
+        // Adding dots to curly paths (approximate by following the bubble curvature)
+        const numDecorDots = 40
+        for (let i = 0; i < numDecorDots; i++) {
+            const a = (i / numDecorDots) * Math.PI * 2
+            // Follow the bubble ellipse radius but slightly wider
+            const x = centerX + (bW / 2 + 6) * Math.cos(a)
+            const y = centerY + (bH / 2 + 6) * Math.sin(a)
 
-        // Better way: Add another layer of dots around the path
-        const dotsAroundHeader = 36
-        for (let i = 0; i < dotsAroundHeader; i++) {
-            const a = (i / dotsAroundHeader) * Math.PI * 2
-            const x = centerX + (bW / 2 + 8) * Math.cos(a)
-            const y = centerY + (bH / 2 + 8) * Math.sin(a)
-            // Add waving offset for more organic look
-            const nx = x + Math.sin(i * 1.5) * 5
-            const ny = y + Math.cos(i * 1.5) * 5
-            canvas.add(new fabric.Circle({ left: nx, top: ny, radius: 5, fill: state.headerOrnamentColor, originX: 'center', originY: 'center', selectable: false }))
+            // Add subtle waving for the "garland" look
+            const waveX = Math.sin(i * 1.2) * 4
+            const waveY = Math.cos(i * 1.2) * 4
+
+            canvas.add(new fabric.Circle({
+                left: x + waveX,
+                top: y + waveY,
+                radius: 5,
+                fill: state.headerOrnamentColor,
+                originX: 'center',
+                originY: 'center',
+                selectable: false
+            }))
         }
 
         // Side Curls (The "loops" on left and right)
